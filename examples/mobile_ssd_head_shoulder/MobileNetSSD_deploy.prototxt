@@ -41,7 +41,7 @@ layer {
 }
 layer {
   name: "conv1/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv0"
   top: "conv1/dw"
   param {
@@ -106,7 +106,7 @@ layer {
 }
 layer {
   name: "conv2/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv1"
   top: "conv2/dw"
   param {
@@ -172,7 +172,7 @@ layer {
 }
 layer {
   name: "conv3/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv2"
   top: "conv3/dw"
   param {
@@ -237,7 +237,7 @@ layer {
 }
 layer {
   name: "conv4/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv3"
   top: "conv4/dw"
   param {
@@ -303,7 +303,7 @@ layer {
 }
 layer {
   name: "conv5/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv4"
   top: "conv5/dw"
   param {
@@ -368,7 +368,7 @@ layer {
 }
 layer {
   name: "conv6/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv5"
   top: "conv6/dw"
   param {
@@ -434,7 +434,7 @@ layer {
 }
 layer {
   name: "conv7/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv6"
   top: "conv7/dw"
   param {
@@ -499,7 +499,7 @@ layer {
 }
 layer {
   name: "conv8/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv7"
   top: "conv8/dw"
   param {
@@ -564,7 +564,7 @@ layer {
 }
 layer {
   name: "conv9/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv8"
   top: "conv9/dw"
   param {
@@ -629,7 +629,7 @@ layer {
 }
 layer {
   name: "conv10/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv9"
   top: "conv10/dw"
   param {
@@ -694,7 +694,7 @@ layer {
 }
 layer {
   name: "conv11/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv10"
   top: "conv11/dw"
   param {
@@ -759,7 +759,7 @@ layer {
 }
 layer {
   name: "conv12/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv11"
   top: "conv12/dw"
   param {
@@ -825,7 +825,7 @@ layer {
 }
 layer {
   name: "conv13/dw"
-  type: "DepthwiseConvolution"
+  type: "Convolution"
   bottom: "conv12"
   top: "conv13/dw"
   param {
@@ -1191,7 +1191,7 @@ layer {
   }
 }
 layer {
-  name: "conv11_mbox_conf_new"
+  name: "conv11_mbox_conf_loc"
   type: "Convolution"
   bottom: "conv11"
   top: "conv11_mbox_conf"
@@ -1204,7 +1204,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: cls3x
+    num_output: 6
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -1301,7 +1301,7 @@ layer {
   }
 }
 layer {
-  name: "conv13_mbox_conf_new"
+  name: "conv13_mbox_conf_loc"
   type: "Convolution"
   bottom: "conv13"
   top: "conv13_mbox_conf"
@@ -1314,7 +1314,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: cls6x
+    num_output: 12
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -1413,7 +1413,7 @@ layer {
   }
 }
 layer {
-  name: "conv14_2_mbox_conf_new"
+  name: "conv14_2_mbox_conf_loc"
   type: "Convolution"
   bottom: "conv14_2"
   top: "conv14_2_mbox_conf"
@@ -1426,7 +1426,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: cls6x
+    num_output: 12
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -1525,7 +1525,7 @@ layer {
   }
 }
 layer {
-  name: "conv15_2_mbox_conf_new"
+  name: "conv15_2_mbox_conf_loc"
   type: "Convolution"
   bottom: "conv15_2"
   top: "conv15_2_mbox_conf"
@@ -1538,7 +1538,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: cls6x
+    num_output: 12
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -1637,7 +1637,7 @@ layer {
   }
 }
 layer {
-  name: "conv16_2_mbox_conf_new"
+  name: "conv16_2_mbox_conf_loc"
   type: "Convolution"
   bottom: "conv16_2"
   top: "conv16_2_mbox_conf"
@@ -1650,7 +1650,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: cls6x
+    num_output: 12
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -1749,7 +1749,7 @@ layer {
   }
 }
 layer {
-  name: "conv17_2_mbox_conf_new"
+  name: "conv17_2_mbox_conf_loc"
   type: "Convolution"
   bottom: "conv17_2"
   top: "conv17_2_mbox_conf"
@@ -1762,7 +1762,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: cls6x
+    num_output: 12
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -1865,7 +1865,7 @@ layer {
     shape {
       dim: 0
       dim: -1
-      dim: cls1x
+      dim: 2
     }
   }
 }
@@ -1898,7 +1898,7 @@ layer {
     phase: TEST
   }
   detection_output_param {
-    num_classes: cls1x
+    num_classes: 2
     share_location: true
     background_label_id: 0
     nms_param {

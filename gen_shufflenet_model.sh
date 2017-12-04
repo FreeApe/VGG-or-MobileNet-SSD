@@ -13,20 +13,20 @@ fi
 cls_num=$1
 cls_num3=$(expr $1 \* 3)
 cls_num6=$(expr $1 \* 6)
-target_dir=mobile_ssd_head_shoulder
-trainfile=examples/$target_dir/MobileNetSSD_train.prototxt
-testfile=examples/$target_dir/MobileNetSSD_test.prototxt
-deploybnfile=examples/$target_dir/MobileNetSSD_deploy_bn.prototxt
-deployfile=examples/$target_dir/MobileNetSSD_deploy.prototxt
+target_dir=shufflenet_ssd_head_shoulder_temp
+trainfile=examples/$target_dir/shufflenet_ssd_train.prototxt
+testfile=examples/$target_dir/shufflenet_ssd_test.prototxt
+deploybnfile=examples/$target_dir/shufflenet_ssd_deploy_bn.prototxt
+deployfile=examples/$target_dir/shufflenet_ssd_deploy.prototxt
 
 mkdir -p examples/$target_dir
 
-cp template/MobileNetSSD_train_template.prototxt $trainfile
+cp shufflenet_template/shufflenet_ssd_train_template.prototxt $trainfile
 sed -i "s/cls6x/${cls_num6}/g" $trainfile
 sed -i "s/cls3x/${cls_num3}/g" $trainfile
 sed -i "s/cls1x/${cls_num}/g" $trainfile
 
-cp template/MobileNetSSD_test_template.prototxt $testfile
+cp shufflenet_template/shufflenet_ssd_test_template.prototxt $testfile
 sed -i "s/cls6x/${cls_num6}/g" $testfile
 sed -i "s/cls3x/${cls_num3}/g" $testfile
 sed -i "s/cls1x/${cls_num}/g" $testfile
@@ -36,7 +36,7 @@ sed -i "s/cls1x/${cls_num}/g" $testfile
 #sed -i "s/cls3x/${cls_num3}/g" $deploybnfile
 #sed -i "s/cls1x/${cls_num}/g" $deploybnfile
 
-cp template/MobileNetSSD_deploy_template.prototxt $deployfile
+cp shufflenet_template/shufflenet_ssd_deploy_template.prototxt $deployfile
 sed -i "s/cls6x/${cls_num6}/g" $deployfile
 sed -i "s/cls3x/${cls_num3}/g" $deployfile
 sed -i "s/cls1x/${cls_num}/g" $deployfile

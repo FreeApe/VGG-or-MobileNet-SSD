@@ -542,6 +542,11 @@ message LayerParameter {
   optional TileParameter tile_param = 138;
   optional VideoDataParameter video_data_param = 207;
   optional WindowDataParameter window_data_param = 129;
+  optional ShuffleChannelParameter shuffle_channel_param = 164;
+}
+
+message ShuffleChannelParameter {
+  optional uint32 group = 1[default = 1]; // The number of group
 }
 
 // Message that stores parameters used to apply transformation

@@ -1,0 +1,11 @@
+item {
+  name: "none_of_the_above"
+  label: 0
+  display_name: "background"
+}
+item {
+  name: "head_shoulder"
+  label: 1
+  display_name: "head_shoulder"
+}
+

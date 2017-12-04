@@ -4,12 +4,15 @@ caffe_root = '/home/yicm/workspace/caffe/'
 sys.path.insert(0, caffe_root + 'python')
 import caffe
 
-target_model_path ='head_shoulder_optimization'
-train_model ='./snapshot/' + target_model_path + '/my_mobilenet_ssd_op2__iter_15000.caffemodel'
-train_proto = './examples/mobile_ssd_' + target_model_path + '/MobileNetSSD_train.prototxt'
-deploy_proto = './examples/mobile_ssd_' + target_model_path + '/MobileNetSSD_deploy.prototxt'
+target_model_path ='shufflenet_head_shoulder'
+train_model ='./snapshot/' + target_model_path + '/my_shufflenet_ssd_iter_10000.caffemodel'
+#train_proto = './examples/mobile_ssd_' + target_model_path + '/MobileNetSSD_train.prototxt'
+#deploy_proto = './examples/mobile_ssd_' + target_model_path + '/MobileNetSSD_deploy.prototxt'
 
-save_model = './snapshot/' + target_model_path + '/head_shoudler_ssd_op2_deploy_15000.caffemodel'
+train_proto = './examples/shufflenet_ssd_head_shoulder/shufflenet_ssd_train.prototxt'
+deploy_proto = './examples/shufflenet_ssd_head_shoulder/shufflenet_ssd_deploy.prototxt'
+
+save_model = './snapshot/' + target_model_path + '/shufflenet_ssd_iter_10000_deploy_batch32.caffemodel'
 
 def merge_bn(net, nob):
     '''
@@ -22,7 +25,7 @@ def merge_bn(net, nob):
     for key in net.params.iterkeys():
         if type(net.params[key]) is caffe._caffe.BlobVec:
             if key.endswith("/bn") or key.endswith("/scale"):
-                continue
+		continue
             else:
                 conv = net.params[key]
                 if not net.params.has_key(key + "/bn"):
