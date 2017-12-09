@@ -375,6 +375,8 @@ else
 	ifeq ($(LINUX), 1)
 		ifeq ($(BLAS), atlas)
 			# Linux simply has cblas and atlas
+			# Ubuntu:YICM
+			# LIBRARIES += cblas atlas
 			LIBRARIES += satlas tatlas
 		endif
 	else ifeq ($(OSX), 1)

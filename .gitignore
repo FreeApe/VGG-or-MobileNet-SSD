@@ -101,4 +101,5 @@ MANIFEST-*
 jobs
 temp
 examples/*/*lmdb
+examples/mobile_ssd_*/*
 images*

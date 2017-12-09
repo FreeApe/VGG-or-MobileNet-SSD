@@ -4,12 +4,12 @@ caffe_root = '/home/yicm/workspace/caffe/'
 sys.path.insert(0, caffe_root + 'python')
 import caffe
 
-target_model_path ='head_shoulder_optimization'
-train_model ='./snapshot/' + target_model_path + '/my_mobilenet_ssd_op2__iter_15000.caffemodel'
+target_model_path ='hand_op'
+train_model ='./snapshot/' + target_model_path + '/my_mobilenet_ssd_hand_iter_25000.caffemodel'
 train_proto = './examples/mobile_ssd_' + target_model_path + '/MobileNetSSD_train.prototxt'
 deploy_proto = './examples/mobile_ssd_' + target_model_path + '/MobileNetSSD_deploy.prototxt'
 
-save_model = './snapshot/' + target_model_path + '/head_shoudler_ssd_op2_deploy_15000.caffemodel'
+save_model = './snapshot/' + target_model_path + '/ssd_hand_op_deploy_25000.caffemodel'
 
 def merge_bn(net, nob):
     '''

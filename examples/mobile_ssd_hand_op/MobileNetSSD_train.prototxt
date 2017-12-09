@@ -47,7 +47,7 @@ layer {
   }
   data_param {
     source: "./examples/hand_data/hand_data_trainval_lmdb"
-    batch_size: 24
+    batch_size: 32
     backend: LMDB
   }
   annotated_data_param {
