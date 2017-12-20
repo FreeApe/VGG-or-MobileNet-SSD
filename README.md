@@ -1,3 +1,7 @@
+# SSD QQ交流群(QQ Communication group)
+
+`581437405`
+
 # SSD: Single Shot MultiBox Detector
 
 [![Build Status](https://travis-ci.org/weiliu89/caffe.svg?branch=ssd)](https://travis-ci.org/weiliu89/caffe)
